@@ -9,6 +9,9 @@ export class OrderPage {
   readonly mainPageLink: Locator
   readonly orderCreatedButton: Locator
   readonly logOutButton: Locator
+  readonly userNameFieldInputError: Locator
+  readonly phoneInputError: Locator
+  readonly orderCreatedPopup: Locator
   // add more locators here
 
   constructor(page: Page) {
@@ -21,5 +24,10 @@ export class OrderPage {
     this.mainPageLink = page.getByTestId('mainPage-link')
     this.orderCreatedButton = page.getByTestId('orderSuccessfullyCreated-popup-ok-button')
     this.logOutButton = page.getByTestId('logout-button')
+    this.userNameFieldInputError = page.getByTestId('username-input-error')
+    this.phoneInputError = page.getByTestId('phone-input-error')
+    this.orderCreatedPopup = page.getByTestId('orderSuccessfullyCreated-popup')
+
+
   }
 }
