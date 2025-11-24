@@ -15,19 +15,19 @@ test('login with correct credentials and verify order creation page', async ({ p
   const authPage = new LoginPage(page)
   await authPage.open()
   const orderCreationPage = await authPage.signIn(USERNAME, PASSWORD)
-  await expect(orderCreationPage.mainPageLink).toBeVisible();
-  await expect(orderCreationPage.userNameField).toBeVisible();
-  await expect(orderCreationPage.orderCreatedButton).toBeVisible();
+  await expect(orderCreationPage.mainPageLink).toBeVisible()
+  await expect(orderCreationPage.userNameField).toBeVisible()
+  await expect(orderCreationPage.orderCreatedButton).toBeVisible()
 })
 
 test('login with correct credentials and create order', async ({ page }) => {
   const authPage = new LoginPage(page)
   await authPage.open()
   const orderCreationPage = await authPage.signIn(USERNAME, PASSWORD)
-  await orderCreationPage.userNameField.fill(faker.lorem.word(2));
-  await orderCreationPage.phoneField.fill(faker.lorem.word(6));
-  await orderCreationPage.createOrderButton.click();
-  await expect(orderCreationPage.orderCreatedButton).toBeVisible();
+  await orderCreationPage.userNameField.fill(faker.lorem.word(2))
+  await orderCreationPage.phoneField.fill(faker.lorem.word(6))
+  await orderCreationPage.createOrderButton.click()
+  await expect(orderCreationPage.orderCreatedButton).toBeVisible()
 })
 
 test('login with correct credentials and logout', async ({ page }) => {
