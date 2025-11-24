@@ -1,4 +1,4 @@
-import type{ Locator, Page } from '@playwright/test'
+import type { Locator, Page } from '@playwright/test'
 export class OrderPage {
   readonly page: Page
   readonly statusButton: Locator
@@ -27,7 +27,5 @@ export class OrderPage {
     this.userNameFieldInputError = page.getByTestId('username-input-error')
     this.phoneInputError = page.getByTestId('phone-input-error')
     this.orderCreatedPopup = page.getByTestId('orderSuccessfullyCreated-popup')
-
-
   }
 }
